@@ -1,0 +1,90 @@
+﻿<Window x:Class="thick.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:thick"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Quan Li Hoc Sinh"
+               HorizontalContentAlignment="Center"
+               FontSize="30"
+               FontWeight="Bold"
+               Foreground="Green"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Ma hoc sinh"
+               Style="{StaticResource 1}"/>
+        <TextBox x:Name="mahs" Grid.Row="1" Grid.Column="1"
+                 Style="{StaticResource 2}"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="Ho ten"
+               Style="{StaticResource 1}"/>
+        <TextBox x:Name="hoten" Grid.Row="2" Grid.Column="1"
+                 Style="{StaticResource 2}"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Ngay sinh"
+               Style="{StaticResource 1}"/>
+        <DatePicker Name="ns" Grid.Row="3" Grid.Column="1"
+                    Height="25"
+                    Width="200"
+                    SelectedDate="1-1-2022"
+                    HorizontalAlignment="Left"/>
+        <Label Grid.Row="4" Grid.Column="0" Content="Gioi Tinh"
+               Style="{StaticResource 1}"/>
+        <StackPanel Grid.Row="4" Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    Orientation="Horizontal"
+                    Margin="10,20,10,0">
+            <RadioButton x:Name="radNam" IsChecked="True">Nam</RadioButton>
+            <RadioButton x:Name="radNu" Margin="20,0,0,0">Nu</RadioButton>
+        </StackPanel>
+        <Label Grid.Row="5" Grid.Column="0" Content="Con thuong binh liet si"
+               Style="{StaticResource 1}"/>
+        <StackPanel Grid.Row="5" Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    Margin="10,20,10,0">
+            <CheckBox x:Name="tbls"/>
+        </StackPanel>
+        <Label Grid.Row="6" Grid.Column="0" Content="Lop"
+               Style="{StaticResource 1}"/>
+        <ComboBox x:Name="lop" Grid.Row="6" Grid.Column="1"
+                  Style="{StaticResource 3}">
+        </ComboBox>
+        <DataGrid x:Name="dt" Grid.Row="7" Grid.ColumnSpan="2"
+                  AutoGenerateColumns="False"
+                  ColumnHeaderStyle="{StaticResource 5}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Ma hoc sinh" Binding="{Binding MaHS}"/>
+                <DataGridTextColumn Header="Ho ten" Binding="{Binding HoTen}"/>
+                <DataGridTextColumn Header="Ngay sinh" Binding="{Binding NgaySinh,StringFormat=dd/MM/yyyy}"
+                                    Foreground="Red"/>
+                <DataGridTextColumn Header="Gioi tinh" Binding="{Binding GioiTinh}"/>
+                <DataGridTextColumn Header="Con thuong binh liet si" Binding="{Binding TBLS}"/>
+                <DataGridTextColumn Header="Ten lop" Binding="{Binding Lop}"/>
+                <DataGridTextColumn Header="Tuoi" Binding="{Binding Tuoi}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="8" Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    >
+            <Button Template="{StaticResource 4}" Margin="15,15,15,15" Click="Button_Click">Them</Button>
+            <Button Template="{StaticResource 4}" Margin="15,15,15,15" Click="W2">Thong ke</Button>
+            <Button Template="{StaticResource 4}" Margin="15,15,15,15" Click="W3">Xoa</Button>
+        </StackPanel>
+        
+    </Grid>
+</Window>
