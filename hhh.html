@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Tin Tức</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Trang Tin Tức</h1>
+  <button id="registerBtn">Đăng ký</button>
+  <button id="darkModeToggle">🌙</button>
+</header>
+
+<nav>
+  <ul id="menu">
+    <li><a href="#">Trang chủ</a></li>
+    <li><a href="#">Giới thiệu</a></li>
+    <li><a href="#">Sản phẩm</a></li>
+    <li><a href="#">Liên hệ</a></li>
+  </ul>
+</nav>
+
+<main>
+  <aside>
+    <h2>Bài viết nổi bật</h2>
+    <ul>
+      <li>Bài viết 1</li>
+      <li>Bài viết 2</li>
+      <li>Bài viết 3</li>
+      <li>Bài viết 4</li>
+      <li>Bài viết 5</li>
+    </ul>
+  </aside>
+
+  <section id="content">
+    <article>
+      <h3 class="title">Bài viết A</h3>
+      <img src="https://via.placeholder.com/150" alt="thumb">
+      <p>Mô tả ngắn bài viết A...</p>
+      <p class="views">Lượt xem: <span>0</span></p>
+    </article>
+
+    <article>
+      <h3 class="title">Bài viết B</h3>
+      <img src="https://via.placeholder.com/150" alt="thumb">
+      <p>Mô tả ngắn bài viết B...</p>
+      <p class="views">Lượt xem: <span>0</span></p>
+    </article>
+
+    <article>
+      <h3 class="title">Bài viết C</h3>
+      <img src="https://via.placeholder.com/150" alt="thumb">
+      <p>Mô tả ngắn bài viết C...</p>
+      <p class="views">Lượt xem: <span>0</span></p>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <p>© 2023 | Giờ hiện tại: <span id="clock"></span></p>
+</footer>
+
+<!-- Popup đăng ký -->
+<div id="popup" class="hidden">
+  <div class="popup-content">
+    <span id="closePopup">&times;</span>
+    <h2>Đăng ký</h2>
+    <form id="registerForm">
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Mật khẩu">
+      <button type="submit">Gửi</button>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
